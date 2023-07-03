@@ -1,1 +1,48 @@
+import xlrd
+import operator
 
+file_path = 
+wb = xlrd.open_workbook(file_path)
+
+per_sh = wb.sheet_by_name('PER')
+
+per_dict = { }
+for i in range(1, per_sh.nrows): 
+  data = per_sh.row_values(i)
+  name, per = data[0], data[1]
+  if per > 0:
+    per_dict[name] = per
+
+sorted_per = sorted(per_dict.items(), key=operator.itemgetter(1))
+
+per_rank = {}
+for num, firm in enumerate(sorted_per):
+  per_rank[firm[0]] = num + 1 
+
+roa_sh = wb.sheet_by_name('ROA')
+
+roa_dict = { }
+for i in range(1, roa_sh.nrows): 
+  data = roa_sh.row_values(i)
+  name, roa = data[0], data[1]
+  if roa != '':
+    roa_dict[name] = roa
+
+sorted_roa = sorted(roa_dict.items(), key=operator.itemgetter(1), reverse=True)
+
+roa_rank = {}
+for num, firm in enumerate(sorted_roa):
+  roa_rank[firm[0]] = num + 1
+
+total_rank = {}
+  
+for name in roa_rank.keys():
+  if name in per_rank.keys():
+    total_rank[name] = per_rank[name] + roa_rank[name]
+
+sorted_total = sorted(total_rank.items(), key=operator.itemgetter(1))
+
+magic_rank = {}
+
+for num, firm in enumerate(sorted_total):
+  magic_rank[firm[0]] = num + 1

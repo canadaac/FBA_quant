@@ -6,7 +6,7 @@ using namespace std;
 int main() 
 {
 	cout << 5. / 9 * (78.0 - 32.0) << endl;
-	cout << 5. / 9 << endl; // ½Ç¼ö ³ª´°¼ÀÀ½ ¼Ò¼öÁ¡µµ Ç¥Çö 
+	cout << 5. / 9 << endl; // ì‹¤ìˆ˜ ë‚˜ëˆ—ì…ˆìŒ ì†Œìˆ˜ì ë„ í‘œí˜„ 
 	cout << 5 / 9 << endl;
 	return 0;
 }
@@ -23,11 +23,11 @@ int main()
 	cout << ft2 << endl;
 	
 	double ft3(78.0);  // ft3 initially 78.0
-					   // (C++ constructor style)   -> Á÷Á¢ ÃÊ±âÈ­·Î ±âÁ¸ º¯¼ö¸¦ ÃÊ±âÈ­ °¡´ÉÇÏ´Ù 
-	cout << ft3 << endl;                           //  (c¿¡¼­ »ç¿ëµÇ´Â ¹æ¹ýÀ¸·Î Á¤È®ÇÏ¸ç ºü¸£´Ù)
+					   // (C++ constructor style)   -> ì§ì ‘ ì´ˆê¸°í™”ë¡œ ê¸°ì¡´ ë³€ìˆ˜ë¥¼ ì´ˆê¸°í™” ê°€ëŠ¥í•˜ë‹¤ 
+	cout << ft3 << endl;                           //  (cì—ì„œ ì‚¬ìš©ë˜ëŠ” ë°©ë²•ìœ¼ë¡œ ì •í™•í•˜ë©° ë¹ ë¥´ë‹¤)
 	
 	double ft4{ 78.0 }; // ft4 initially 78.0
-						// (C++11 initializer list) -> À¯´ÏÆû ÃÊ±âÈ­·Î ±âÁ¸ º¯¼ö¸¦ ÃÊ±âÈ­ °¡´ÉÇÏ´Ù (º¯¼ö Å¸ÀÔ º¯°æ ºÒ°¡)
+						// (C++11 initializer list) -> ìœ ë‹ˆí¼ ì´ˆê¸°í™”ë¡œ ê¸°ì¡´ ë³€ìˆ˜ë¥¼ ì´ˆê¸°í™” ê°€ëŠ¥í•˜ë‹¤ (ë³€ìˆ˜ íƒ€ìž… ë³€ê²½ ë¶ˆê°€)
 	cout << ft4 << endl;
 	return 0;
 }
@@ -36,7 +36,7 @@ int main()
 
 int main()
 {
-	double f_temp(0.0); // init with something,  Á÷Á¢ ÃÊ±âÈ­
+	double f_temp(0.0); // init with something,  ì§ì ‘ ì´ˆê¸°í™”
 	cout << "Enter Farenheit temperature: ";
 	cin >> f_temp;
 	cout << f_temp << " degrees Farenheit is " << (f_temp - 32.0) * 5 / 9
